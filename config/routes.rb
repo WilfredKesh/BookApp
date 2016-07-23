@@ -2,7 +2,9 @@ Rails.application.routes.draw do
  
 
   devise_for :users
-  resources :books
+  resources :books do
+    resources :reviews
+  end
 
   root "books#index"
   # You can have the root of your site routed with "root"
